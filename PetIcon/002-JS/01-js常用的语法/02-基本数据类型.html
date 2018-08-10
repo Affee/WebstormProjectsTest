@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS基本数据类型</title>
+    <script type="text/javascript">
+        <!--基本数据类型-->
+        var age  = 20;
+        var money = 100.01;
+        var name = 'jack';
+            name2 = 'rose';
+        var result = true;
+        var scor = null;
+    console.log(typeof age,typeof money,typeof name,typeof name2);
+
+        // 字符串的拼接
+        var newNmae = name +'hank'+ name2;
+        console.log(newNmae);
+// 3.// 任何和字符串加起来，都是字符串
+//         从左往右执行
+
+        var str1 = 10  + 10 + 10 ; //30
+        var str2 = 10 + 10 + '10';//2010
+        var str3 = '10'+10 +'10';//101010
+        var str4 = '10'+ 10+10;//101010
+        var str5 = 10+'10'+10;//101010
+        var str6 = '10'+(10+10);//1020
+        console.log(str1,str2,str3,str4,str5,str6);
+
+    //    数组
+        var arr = [];
+    // 往数组里面加东西，入栈
+        arr.push(22,-9,'hank',result,scor,['开车了','dididi']);
+        // 输出数组中的内容
+        console.log(arr);
+        // 变量数组
+        for (var i = 0;i<arr.length;i++){
+            console.log(i,arr[i]);
+        }
+        // forin 取代for i不是数组元素，而是数组角标
+        for (var i in arr) {
+            console.log(arr[i])
+        }
+
+        // 从数组中删除
+        arr.pop();
+        console.log(arr);
+        arr.pop();
+        console.log(arr);
+
+        // math 库
+        var numbers = [10,89,-66,100,312];
+        // 取最大最小值
+        console.log(Math.max(10,89,-66,100,312));
+        console.log(Math.min.apply(this,numbers));
+
+        // 指定数据类型
+        // js中任何变量都是一个 对象
+        var x = new String;
+
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

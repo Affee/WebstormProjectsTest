@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--<html lang="en">-->
+<head>
+    <meta charset="UTF-8">
+    <title>js中的函数</title>
+
+    <script>
+        // 1.1 加法运算
+        function sum(num1, num2) {
+            return num1 + num2;
+        }
+    //如何调用
+        var result = sum(12,22);
+        console.log(result);
+
+        // 1.2 万能的加法函数
+        function sum2(numbers) {
+            var result = 0;
+            for(var i in numbers) {
+                result += numbers[i];
+            }
+            return result;
+        }
+        var result1 = sum2([123,1231,12312,1231,1231,1231,1231]);
+        console.log(result1);
+
+    //  1.3  匿名函数 相当于block块，swift中的闭包，只是相当于
+        var res = function () {
+            console.log('我是狗崽子的爸爸ha');
+        }
+        // 调用匿名函数
+        res();
+
+    //    调用匿名函数222
+        function funct(block) {
+            block();
+        }
+        funct(res);
+
+        // 1.4  js中的闭包  block作为返回值是匿名函数  函数中的函数
+        function func1(num1) {
+            return function (num2) {
+                return num1 + num2;
+            }
+        }
+        var temp = func1(2);
+        var temp2 = temp(5);
+        console.log(temp2);
+
+        // 作用域  在js中，是由函数来划分的，不像oc中大括号来判断
+        //代码块的作用域
+        var t = 'doubi' //在oc中 这个全局变量
+        if (true) {
+            var t = 'lalala';//js中 这个依旧是全局变量，跟oc中 不一样
+        }
+        console.log(t);
+
+        // 函数的作用域
+        function test() {
+            var t = 'biliubiliu';
+        }
+        test();
+        console.log(t);
+
+
+    // 创建一个对象，给对象定义属性，创建对象函数
+        var obj = new Object();
+        obj.age = 5;
+        obj.click = function () {
+            alert("我被单击了");
+        }
+      // 另外一方法
+        var obj1 = {
+            age:5,
+            click:function  () {
+                alert('我也被点击了');
+            }
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
